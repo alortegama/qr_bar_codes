@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+            <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/percent_V10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/percent_V90"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.9" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/percent_H10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/percent_H90"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.9" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aquí tens el teu QR!"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/percent_H10" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til"
+        app:layout_constraintTop_toBottomOf="@id/tv"
+        app:layout_constraintStart_toStartOf="@id/percent_V10"
+        app:layout_constraintEnd_toEndOf="@id/percent_V90"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Quin text vols convertir en QR?"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/qr"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/til"
+        app:layout_constraintStart_toStartOf="@id/percent_V10"
+        app:layout_constraintEnd_toEndOf="@id/percent_V90"
+        app:layout_constraintBottom_toTopOf="@id/generador"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/generador"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/percent_V10"
+        app:layout_constraintEnd_toEndOf="@id/percent_V90"
+        app:layout_constraintBottom_toTopOf="@id/percent_H90"
+        android:text="GENERAR QR"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
